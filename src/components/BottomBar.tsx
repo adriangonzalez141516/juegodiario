@@ -14,7 +14,7 @@ export default function BottomBar() {
   ];
 
   return (
-    <nav className="fixed bottom-0 w-full bg-[#2a2118] border-t border-[#4a3c2b] shadow-[0_-5px_15px_rgba(0,0,0,0.5)] z-50">
+    <nav className="fixed bottom-0 w-full bg-[var(--card)] border-t border-[var(--card-border)] shadow-[0_-5px_15px_rgba(0,0,0,0.1)] dark:shadow-[0_-5px_15px_rgba(0,0,0,0.5)] z-50">
       <div className="max-w-md mx-auto px-6 h-16 flex items-center justify-between">
         {navItems.map((item) => {
           const Icon = item.icon;
@@ -25,7 +25,7 @@ export default function BottomBar() {
               key={item.href} 
               href={item.href}
               className={`flex flex-col items-center justify-center w-full h-full space-y-1 transition-colors ${
-                isActive ? 'text-[#d4af37]' : 'text-[#f4ecd8]/50 hover:text-[#f4ecd8]'
+                isActive ? 'text-[var(--accent)]' : 'text-[var(--foreground)] opacity-60 hover:opacity-100'
               }`}
             >
               <Icon size={20} className={isActive ? 'drop-shadow-[0_0_5px_rgba(212,175,55,0.5)]' : ''} />
