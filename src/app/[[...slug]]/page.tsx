@@ -82,15 +82,10 @@ export default async function OrchestratorPage({ params }: Props) {
         <PuzzleView puzzle={puzzle} />
       </Suspense>
 
-      <div className="mt-6 text-center w-full max-w-md">
-        <h3 className="text-sm font-medium text-slate-400 mb-2 uppercase tracking-wide">
-          Introduce tu respuesta
-        </h3>
-        {/* Aquí pasamos la Server Action a ejecutar asíncronamente */}
-        <InteractiveInput 
-          hashedSolution={hashedSolution} 
-          onSuccess={saveProgress} 
-        />
+      <div className="fixed bottom-16 left-0 w-full p-4 bg-[var(--background)] border-t border-[var(--card-border)] z-40 flex justify-center">
+        <div className="w-full max-w-md">
+          <InteractiveInput hashedSolution={hashedSolution} onSuccess={saveProgress} />
+        </div>
       </div>
     </div>
   );

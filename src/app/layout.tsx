@@ -38,7 +38,7 @@ export default function RootLayout({
             </h1>
             <ThemeToggle />
           </header>
-          <main className="flex-1 w-full max-w-3xl mx-auto px-4 pb-20 flex flex-col items-center justify-center min-h-0 overflow-y-auto">
+          <main className="flex-1 w-full max-w-3xl mx-auto px-4 pb-36 flex flex-col items-center justify-center min-h-0 overflow-y-auto">
             {children}
           </main>
           <BottomBar />
