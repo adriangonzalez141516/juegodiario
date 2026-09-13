@@ -1,5 +1,6 @@
 import { AnyPuzzle } from '@/services/puzzleService';
 import React from 'react';
+import TuesdayCarousel from './TuesdayCarousel';
 
 interface PuzzleViewProps {
   puzzle: AnyPuzzle;
@@ -26,14 +27,7 @@ export default function PuzzleView({ puzzle }: PuzzleViewProps) {
         )}
 
         {puzzle.type === 'tuesday_deduction' && (
-          <div className="flex md:grid md:grid-cols-3 overflow-x-auto md:overflow-visible gap-3 pb-2 snap-x snap-mandatory hide-scrollbar">
-            {puzzle.testimonies.map((t, idx) => (
-              <div key={idx} className="min-w-[85%] flex-shrink-0 md:min-w-0 md:flex-shrink snap-center p-3 bg-[var(--card-inner)] rounded-sm border border-card-border text-left shadow-inner">
-                <h3 className="font-bold font-serif text-accent mb-1 text-sm">{t.character}</h3>
-                <p className="text-foreground/90 text-sm leading-snug">"{t.statement}"</p>
-              </div>
-            ))}
-          </div>
+          <TuesdayCarousel testimonies={puzzle.testimonies} />
         )}
 
         {puzzle.type === 'wednesday_hieroglyph' && (
