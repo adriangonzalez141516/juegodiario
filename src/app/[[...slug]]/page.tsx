@@ -78,11 +78,11 @@ export default async function OrchestratorPage({ params }: Props) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       
-      <div className="w-full mb-32">
-        <Suspense fallback={<div className="animate-pulse h-[65vh] w-full bg-[var(--card)] opacity-50 rounded-sm"></div>}>
+      <Suspense fallback={<div className="animate-pulse h-[65vh] w-full bg-[var(--card)] opacity-50 rounded-sm my-auto"></div>}>
+        <div className="w-full my-auto">
           <PuzzleView puzzle={puzzle} />
-        </Suspense>
-      </div>
+        </div>
+      </Suspense>
 
       <div className="fixed bottom-16 left-0 w-full p-4 bg-[var(--background)] border-t border-[var(--card-border)] z-40 flex justify-center">
         <div className="w-full max-w-md">
