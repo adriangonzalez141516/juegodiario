@@ -33,7 +33,7 @@ export default function InteractiveInput({ hashedSolution, onSuccess }: Interact
   };
 
   return (
-    <form onSubmit={handleSubmit} className="w-full max-w-md mt-8">
+    <form onSubmit={handleSubmit} className="w-full max-w-md mx-auto">
       <div className="relative flex items-center">
         <input
           type="text"
@@ -41,23 +41,23 @@ export default function InteractiveInput({ hashedSolution, onSuccess }: Interact
           onChange={(e) => setInput(e.target.value)}
           disabled={success}
           placeholder="Escribe tu respuesta aquí..."
-          className={`w-full px-6 py-4 rounded-sm bg-[#1a1410]/80 border shadow-inner text-[#f4ecd8] placeholder:text-[#f4ecd8]/40 focus:outline-none focus:ring-1 focus:ring-[#d4af37] transition-all font-serif ${
+          className={`w-full px-5 py-3 rounded-sm bg-black/30 border shadow-inner text-foreground placeholder:text-foreground/40 focus:outline-none focus:ring-1 focus:ring-accent transition-all font-serif ${
             error ? 'border-red-900 ring-1 ring-red-900 animate-pulse' : 
-            success ? 'border-green-900 ring-1 ring-green-900' : 'border-[#4a3c2b]'
+            success ? 'border-green-900 ring-1 ring-green-900' : 'border-card-border'
           }`}
         />
         <button
           type="submit"
           disabled={success || !input.trim()}
-          className={`absolute right-2 px-4 py-2 rounded-sm font-medium transition-colors font-serif ${
-            success ? 'bg-green-900 text-[#f4ecd8]' : 'bg-[#4a3c2b] hover:bg-[#d4af37] text-[#f4ecd8] hover:text-[#1a1410] disabled:bg-[#2a2118] disabled:text-[#f4ecd8]/30'
+          className={`absolute right-1 px-3 py-1.5 rounded-sm font-medium transition-colors font-serif text-sm ${
+            success ? 'bg-green-900 text-foreground' : 'bg-card border border-card-border hover:bg-accent text-foreground hover:text-black disabled:opacity-50 disabled:hover:bg-card disabled:hover:text-foreground'
           }`}
         >
           {success ? 'Correcto' : 'Comprobar'}
         </button>
       </div>
       {error && (
-        <p className="text-red-400 text-sm mt-2 text-center animate-bounce font-serif italic">
+        <p className="text-red-400 text-xs mt-2 text-center animate-bounce font-serif italic">
           Respuesta incorrecta. Inténtalo de nuevo.
         </p>
       )}

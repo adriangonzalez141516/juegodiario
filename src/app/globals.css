@@ -1,11 +1,11 @@
 @import "tailwindcss";
 
 :root {
-  --background: #1a1410; /* Dark brown / sepia base */
-  --foreground: #f4ecd8; /* Parchment white */
-  --accent: #d4af37;     /* Antique gold */
-  --card: #2a2118;       /* Darker brown for cards */
-  --card-border: #4a3c2b; /* Lighter brown for borders */
+  --background: #1e1511;
+  --foreground: #fcf6eb;
+  --accent: #e5c365;
+  --card: #2e231b;
+  --card-border: #564030;
 }
 
 @theme inline {

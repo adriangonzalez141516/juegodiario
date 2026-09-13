@@ -7,54 +7,54 @@ interface PuzzleViewProps {
 
 export default function PuzzleView({ puzzle }: PuzzleViewProps) {
   return (
-    <div className="w-full antique-panel p-8 md:p-12 mt-8 flex flex-col items-center justify-center text-center">
-      <div className="mb-4 text-[#d4af37] font-semibold tracking-widest uppercase text-sm">
+    <div className="w-full antique-panel p-6 md:p-8 flex flex-col items-center justify-center text-center">
+      <div className="mb-2 text-accent font-semibold tracking-widest uppercase text-xs md:text-sm">
         Día {puzzle.dayOfWeek} • {puzzle.title}
       </div>
-      <p className="text-[#f4ecd8]/80 text-lg mb-8 max-w-2xl font-serif">
+      <p className="text-foreground text-base md:text-lg mb-6 max-w-2xl font-serif leading-relaxed">
         {puzzle.description}
       </p>
 
       {/* Renderizado específico por tipo de puzle */}
-      <div className="w-full">
+      <div className="w-full max-w-lg mx-auto">
         {puzzle.type === 'monday_object' && (
-          <div className="p-6 bg-[#1a1410]/50 rounded-sm border border-[#4a3c2b] shadow-inner">
-            <p className="text-xl italic font-serif text-[#f4ecd8]">
+          <div className="p-5 bg-black/20 rounded-sm border border-card-border shadow-inner">
+            <p className="text-lg md:text-xl italic font-serif text-foreground">
               "{puzzle.alienDescription}"
             </p>
           </div>
         )}
 
         {puzzle.type === 'tuesday_deduction' && (
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
             {puzzle.testimonies.map((t, idx) => (
-              <div key={idx} className="p-4 bg-[#1a1410]/50 rounded-sm border border-[#4a3c2b] text-left shadow-inner">
-                <h3 className="font-bold font-serif text-[#d4af37] mb-2">{t.character}</h3>
-                <p className="text-[#f4ecd8]/70 text-sm">"{t.statement}"</p>
+              <div key={idx} className="p-3 bg-black/20 rounded-sm border border-card-border text-left shadow-inner">
+                <h3 className="font-bold font-serif text-accent mb-1 text-sm">{t.character}</h3>
+                <p className="text-foreground/90 text-sm leading-snug">"{t.statement}"</p>
               </div>
             ))}
           </div>
         )}
 
         {puzzle.type === 'wednesday_hieroglyph' && (
-          <div className="p-8 text-5xl tracking-widest bg-[#1a1410]/50 rounded-sm border border-[#4a3c2b] shadow-inner">
+          <div className="p-6 text-4xl md:text-5xl tracking-widest bg-black/20 rounded-sm border border-card-border shadow-inner">
             {puzzle.emojis}
           </div>
         )}
 
         {puzzle.type === 'thursday_logic' && (
           <div className="flex flex-col items-center">
-            <div className="flex gap-2 md:gap-4 mb-6">
+            <div className="flex gap-2 md:gap-3 mb-4">
               {Array.from({ length: puzzle.slots }).map((_, i) => (
-                <div key={i} className="w-12 h-16 md:w-16 md:h-20 border-2 border-dashed border-[#4a3c2b] rounded-sm flex items-center justify-center text-[#4a3c2b] font-bold font-serif">
+                <div key={i} className="w-10 h-14 md:w-14 md:h-16 border-2 border-dashed border-card-border rounded-sm flex items-center justify-center text-card-border font-bold font-serif">
                   {i + 1}
                 </div>
               ))}
             </div>
-            <ul className="text-left space-y-2 text-[#f4ecd8]/80 font-serif">
+            <ul className="text-left space-y-1 text-foreground/90 font-serif text-sm md:text-base">
               {puzzle.rules.map((rule, idx) => (
                 <li key={idx} className="flex items-start">
-                  <span className="text-[#d4af37] mr-2">•</span> {rule}
+                  <span className="text-accent mr-2">•</span> <span className="leading-tight">{rule}</span>
                 </li>
               ))}
             </ul>
@@ -62,17 +62,17 @@ export default function PuzzleView({ puzzle }: PuzzleViewProps) {
         )}
 
         {puzzle.type === 'friday_riddle' && (
-          <div className="p-8 bg-[#1a1410]/50 rounded-sm border border-[#4a3c2b] shadow-inner">
-            <h2 className="text-2xl font-serif text-[#f4ecd8] italic">
+          <div className="p-6 bg-black/20 rounded-sm border border-card-border shadow-inner">
+            <h2 className="text-xl md:text-2xl font-serif text-foreground italic">
               "{puzzle.riddleText}"
             </h2>
           </div>
         )}
 
         {puzzle.type === 'saturday_association' && (
-          <div className="grid grid-cols-2 gap-4 max-w-sm mx-auto">
+          <div className="grid grid-cols-2 gap-3 max-w-sm mx-auto">
             {puzzle.words.map((word, idx) => (
-              <div key={idx} className="p-4 bg-[#1a1410]/50 rounded-sm border border-[#4a3c2b] shadow-inner flex items-center justify-center font-serif text-[#f4ecd8]">
+              <div key={idx} className="p-3 bg-black/20 rounded-sm border border-card-border shadow-inner flex items-center justify-center font-serif text-foreground text-sm md:text-base">
                 {word}
               </div>
             ))}
@@ -80,12 +80,12 @@ export default function PuzzleView({ puzzle }: PuzzleViewProps) {
         )}
 
         {puzzle.type === 'sunday_metapuzzle' && (
-          <div className="p-6 bg-[#1a1410]/50 rounded-sm border border-[#4a3c2b] shadow-inner">
-            <p className="text-lg text-[#d4af37] font-serif font-medium mb-4">
+          <div className="p-5 bg-black/20 rounded-sm border border-card-border shadow-inner">
+            <p className="text-base md:text-lg text-accent font-serif font-medium mb-3">
               {puzzle.narrative}
             </p>
-            <div className="text-sm text-[#f4ecd8]/60 font-serif">
-              Has resuelto <span className="text-[#f4ecd8] font-bold">?</span> de {puzzle.requiredSolutions} puzles necesarios.
+            <div className="text-sm text-foreground/80 font-serif">
+              Has resuelto <span className="text-foreground font-bold">?</span> de {puzzle.requiredSolutions} puzles necesarios.
             </div>
           </div>
         )}

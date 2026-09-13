@@ -27,13 +27,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es" className={`${inter.variable} ${playfair.variable}`}>
-      <body className="antialiased min-h-screen flex flex-col pb-16">
-        <header className="w-full max-w-4xl mx-auto p-6 flex justify-center items-center">
-          <h1 className="text-3xl font-serif font-bold tracking-widest text-[#d4af37] drop-shadow-md">
+      <body className="antialiased h-[100dvh] flex flex-col overflow-hidden">
+        <header className="w-full max-w-4xl mx-auto px-4 py-3 sm:py-4 flex justify-center items-center shrink-0">
+          <h1 className="text-2xl sm:text-3xl font-serif font-bold tracking-widest text-[var(--accent)] drop-shadow-md">
             EL ENIGMA DIARIO
           </h1>
         </header>
-        <main className="flex-1 w-full max-w-4xl mx-auto p-6 flex flex-col items-center">
+        <main className="flex-1 w-full max-w-3xl mx-auto px-4 pb-20 flex flex-col items-center justify-center min-h-0 overflow-y-auto">
           {children}
         </main>
         <BottomBar />
