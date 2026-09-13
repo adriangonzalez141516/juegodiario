@@ -18,7 +18,7 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "El Enigma Diario",
+  title: "El Enigma",
   description: "Desafía tu mente cada día con un nuevo rompecabezas lógico.",
 };
 
@@ -34,7 +34,7 @@ export default function RootLayout({
           <header className="w-full max-w-4xl mx-auto px-4 py-3 sm:py-4 flex justify-between items-center shrink-0">
             <div className="w-9" /> {/* Spacer para centrar el título */}
             <h1 className="text-2xl sm:text-3xl font-serif font-bold tracking-widest text-[var(--accent)] drop-shadow-md">
-              EL ENIGMA DIARIO
+              EL ENIGMA
             </h1>
             <ThemeToggle />
           </header>
