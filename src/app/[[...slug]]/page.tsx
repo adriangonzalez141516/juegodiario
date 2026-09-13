@@ -71,15 +71,15 @@ export default async function OrchestratorPage({ params }: Props) {
   };
 
   return (
-    <div className="w-full min-h-full flex flex-col items-center px-4">
+    <div className="w-full h-full min-h-full flex flex-col items-center px-4">
       {/* Schema JSON-LD para SEO */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-
-      <div className="w-full my-auto shrink-0 pt-2">
-        <Suspense fallback={<div className="animate-pulse h-[60vh] w-full bg-[var(--card)] opacity-50 rounded-sm"></div>}>
+      
+      <div className="w-full flex-1 flex flex-col justify-center min-h-0 pt-4">
+        <Suspense fallback={<div className="animate-pulse h-full w-full bg-[var(--card)] opacity-50 rounded-sm"></div>}>
           <PuzzleView puzzle={puzzle} />
         </Suspense>
       </div>
