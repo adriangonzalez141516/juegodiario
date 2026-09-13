@@ -16,7 +16,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const slug = resolvedParams.slug;
   const isArchive = slug && slug[0] === 'archive';
   const isTest = slug && slug[0] === 'test';
-  
+
   if (isArchive) {
     return {
       title: "Archivo - El Enigma Diario",
@@ -30,7 +30,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 
   const { puzzle } = await getDailyPuzzle(0, forceDay);
-  
+
   return {
     title: `${puzzle.title} | El Enigma Diario`,
     description: puzzle.description,
@@ -43,7 +43,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function OrchestratorPage({ params }: Props) {
   const resolvedParams = await params;
   const slug = resolvedParams.slug;
-  
+
   // Ruteo básico por slug
   if (slug && slug[0] === 'archive') {
     return (
@@ -77,8 +77,8 @@ export default async function OrchestratorPage({ params }: Props) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      
-      <div className="w-full my-auto shrink-0 pt-4">
+
+      <div className="w-full my-auto shrink-0 pt-2">
         <Suspense fallback={<div className="animate-pulse h-[60vh] w-full bg-[var(--card)] opacity-50 rounded-sm"></div>}>
           <PuzzleView puzzle={puzzle} />
         </Suspense>
