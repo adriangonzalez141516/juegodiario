@@ -41,7 +41,7 @@ export default function InteractiveInput({ hashedSolution, onSuccess }: Interact
           onChange={(e) => setInput(e.target.value)}
           disabled={success}
           placeholder="Escribe tu respuesta aquí..."
-          className={`w-full px-5 py-3 rounded-sm bg-[var(--card-inner)] border shadow-inner text-foreground placeholder:text-foreground/40 focus:outline-none focus:ring-1 focus:ring-accent transition-all font-serif ${
+          className={`w-full px-5 py-3 rounded-sm bg-[var(--card)] border shadow-inner text-foreground placeholder:text-foreground/40 focus:outline-none focus:ring-1 focus:ring-accent transition-all font-serif ${
             error ? 'border-red-900 ring-1 ring-red-900 animate-pulse' : 
             success ? 'border-green-900 ring-1 ring-green-900' : 'border-card-border'
           }`}
