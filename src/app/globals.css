@@ -69,4 +69,13 @@ body {
     bottom: 4px; right: 4px;
     border-left: none; border-top: none;
   }
+
+  /* Utilidad para ocultar barras de scroll */
+  .hide-scrollbar {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
 }
