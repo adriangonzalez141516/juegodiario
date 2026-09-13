@@ -71,7 +71,7 @@ export default async function OrchestratorPage({ params }: Props) {
   };
 
   return (
-    <div className="w-full min-h-full flex flex-col items-center">
+    <div className="w-full min-h-full flex flex-col items-center px-4">
       {/* Schema JSON-LD para SEO */}
       <script
         type="application/ld+json"
