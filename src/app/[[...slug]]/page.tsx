@@ -71,8 +71,8 @@ export default async function OrchestratorPage({ params }: Props) {
   };
 
   return (
-    <div className="w-full flex flex-col items-center">
-      {/* Inyección JSON-LD */}
+    <div className="w-full min-h-full flex flex-col items-center justify-center px-4 pt-4 pb-44">
+      {/* Schema JSON-LD para SEO */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
