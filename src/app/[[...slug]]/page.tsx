@@ -15,6 +15,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const resolvedParams = await params;
   const slug = resolvedParams.slug;
   const isArchive = slug && slug[0] === 'archive';
+  const isTest = slug && slug[0] === 'test';
   
   if (isArchive) {
     return {
@@ -23,7 +24,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     };
   }
 
-  const { puzzle } = await getDailyPuzzle(0);
+  let forceDay: number | undefined;
+  if (isTest && slug[1]) {
+    forceDay = parseInt(slug[1]);
+  }
+
+  const { puzzle } = await getDailyPuzzle(0, forceDay);
   
   return {
     title: `${puzzle.title} | El Enigma Diario`,
@@ -42,13 +48,18 @@ export default async function OrchestratorPage({ params }: Props) {
   if (slug && slug[0] === 'archive') {
     return (
       <div className="w-full flex flex-col items-center">
-        <h2 className="text-2xl font-bold mb-4">Archivo de Puzles</h2>
+        <h2 className="text-2xl font-serif font-bold mb-4 text-[#d4af37]">Archivo de Puzles</h2>
         <p className="text-slate-400">Próximamente...</p>
       </div>
     );
   }
 
-  const { puzzle, hashedSolution } = await getDailyPuzzle(0);
+  let forceDay: number | undefined;
+  if (slug && slug[0] === 'test' && slug[1]) {
+    forceDay = parseInt(slug[1]);
+  }
+
+  const { puzzle, hashedSolution } = await getDailyPuzzle(0, forceDay);
 
   // Schema JSON-LD para SEO
   const jsonLd = {

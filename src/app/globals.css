@@ -1,11 +1,11 @@
 @import "tailwindcss";
 
 :root {
-  --background: #0f172a; /* Slate 900 */
-  --foreground: #f8fafc; /* Slate 50 */
-  --accent: #3b82f6;     /* Blue 500 */
-  --card: rgba(30, 41, 59, 0.7); /* Slate 800 with opacity for glassmorphism */
-  --card-border: rgba(255, 255, 255, 0.1);
+  --background: #1a1410; /* Dark brown / sepia base */
+  --foreground: #f4ecd8; /* Parchment white */
+  --accent: #d4af37;     /* Antique gold */
+  --card: #2a2118;       /* Darker brown for cards */
+  --card-border: #4a3c2b; /* Lighter brown for borders */
 }
 
 @theme inline {
@@ -15,24 +15,47 @@
   --color-card: var(--card);
   --color-card-border: var(--card-border);
   --font-sans: var(--font-inter), sans-serif;
+  --font-serif: var(--font-playfair), serif;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans);
-  background-image: radial-gradient(circle at 50% 0%, #1e293b 0%, transparent 75%);
+  /* Textura simulando pergamino oscuro y viñeta */
+  background-image: 
+    radial-gradient(circle at center, transparent 0%, #110d0a 100%),
+    url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100' height='100' filter='url(%23noise)' opacity='0.05'/%3E%3C/svg%3E");
   background-attachment: fixed;
   min-height: 100vh;
 }
 
-/* Custom utility for glassmorphism panels */
+/* Custom utility for antique panels */
 @layer utilities {
-  .glass-panel {
+  .antique-panel {
     background-color: var(--card);
-    backdrop-filter: blur(12px);
     border: 1px solid var(--card-border);
-    border-radius: 1rem;
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    border-radius: 0.25rem;
+    box-shadow: inset 0 0 20px rgba(0,0,0,0.5), 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+    position: relative;
+  }
+  
+  /* Esquinas decorativas */
+  .antique-panel::before,
+  .antique-panel::after {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border: 1px solid var(--accent);
+    opacity: 0.5;
+  }
+  .antique-panel::before {
+    top: 4px; left: 4px;
+    border-right: none; border-bottom: none;
+  }
+  .antique-panel::after {
+    bottom: 4px; right: 4px;
+    border-left: none; border-top: none;
   }
 }

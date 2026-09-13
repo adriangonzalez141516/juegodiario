@@ -41,23 +41,23 @@ export default function InteractiveInput({ hashedSolution, onSuccess }: Interact
           onChange={(e) => setInput(e.target.value)}
           disabled={success}
           placeholder="Escribe tu respuesta aquí..."
-          className={`w-full px-6 py-4 rounded-xl bg-slate-800/50 border backdrop-blur-sm text-slate-100 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all ${
-            error ? 'border-red-500 ring-2 ring-red-500 animate-pulse' : 
-            success ? 'border-green-500 ring-2 ring-green-500' : 'border-slate-700'
+          className={`w-full px-6 py-4 rounded-sm bg-[#1a1410]/80 border shadow-inner text-[#f4ecd8] placeholder:text-[#f4ecd8]/40 focus:outline-none focus:ring-1 focus:ring-[#d4af37] transition-all font-serif ${
+            error ? 'border-red-900 ring-1 ring-red-900 animate-pulse' : 
+            success ? 'border-green-900 ring-1 ring-green-900' : 'border-[#4a3c2b]'
           }`}
         />
         <button
           type="submit"
           disabled={success || !input.trim()}
-          className={`absolute right-2 px-4 py-2 rounded-lg font-medium transition-colors ${
-            success ? 'bg-green-600 text-white' : 'bg-blue-600 hover:bg-blue-500 text-white disabled:bg-slate-700 disabled:text-slate-400'
+          className={`absolute right-2 px-4 py-2 rounded-sm font-medium transition-colors font-serif ${
+            success ? 'bg-green-900 text-[#f4ecd8]' : 'bg-[#4a3c2b] hover:bg-[#d4af37] text-[#f4ecd8] hover:text-[#1a1410] disabled:bg-[#2a2118] disabled:text-[#f4ecd8]/30'
           }`}
         >
           {success ? 'Correcto' : 'Comprobar'}
         </button>
       </div>
       {error && (
-        <p className="text-red-400 text-sm mt-2 text-center animate-bounce">
+        <p className="text-red-400 text-sm mt-2 text-center animate-bounce font-serif italic">
           Respuesta incorrecta. Inténtalo de nuevo.
         </p>
       )}

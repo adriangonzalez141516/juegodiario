@@ -1,9 +1,16 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
+import BottomBar from "@/components/BottomBar";
 
 const inter = Inter({
   variable: "--font-inter",
+  subsets: ["latin"],
+  display: "swap",
+});
+
+const playfair = Playfair_Display({
+  variable: "--font-playfair",
   subsets: ["latin"],
   display: "swap",
 });
@@ -19,22 +26,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es" className={`${inter.variable}`}>
-      <body className="antialiased min-h-screen flex flex-col">
-        <header className="w-full max-w-4xl mx-auto p-6 flex justify-between items-center">
-          <h1 className="text-2xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-emerald-400">
-            El Enigma Diario
+    <html lang="es" className={`${inter.variable} ${playfair.variable}`}>
+      <body className="antialiased min-h-screen flex flex-col pb-16">
+        <header className="w-full max-w-4xl mx-auto p-6 flex justify-center items-center">
+          <h1 className="text-3xl font-serif font-bold tracking-widest text-[#d4af37] drop-shadow-md">
+            EL ENIGMA DIARIO
           </h1>
-          <nav>
-            {/* Nav placeholder */}
-          </nav>
         </header>
         <main className="flex-1 w-full max-w-4xl mx-auto p-6 flex flex-col items-center">
           {children}
         </main>
-        <footer className="w-full py-6 text-center text-sm text-slate-500">
-          <p>© {new Date().getFullYear()} El Enigma Diario. Todos los derechos reservados.</p>
-        </footer>
+        <BottomBar />
       </body>
     </html>
   );

@@ -181,20 +181,26 @@ export interface DailyPuzzlePayload {
 // Función auxiliar movida a @/utils/helpers
 
 // Función para obtener el puzle del día
-export async function getDailyPuzzle(dayOffset: number = 0): Promise<DailyPuzzlePayload> {
+export async function getDailyPuzzle(dayOffset: number = 0, forceDay?: number): Promise<DailyPuzzlePayload> {
   // Simulamos un pequeño delay de BBDD
   await new Promise(resolve => setTimeout(resolve, 500));
   
-  const today = new Date();
-  let currentDay = today.getDay(); // 0 = Domingo, 1 = Lunes, etc.
-  
-  // Ajuste para que Lunes = 1, ..., Domingo = 7
-  if (currentDay === 0) currentDay = 7;
-  
-  // Aplicar offset para debugging
-  let targetDay = currentDay + dayOffset;
-  while (targetDay < 1) targetDay += 7;
-  while (targetDay > 7) targetDay -= 7;
+  let targetDay = 1;
+
+  if (forceDay !== undefined && forceDay >= 1 && forceDay <= 7) {
+    targetDay = forceDay;
+  } else {
+    const today = new Date();
+    let currentDay = today.getDay(); // 0 = Domingo, 1 = Lunes, etc.
+    
+    // Ajuste para que Lunes = 1, ..., Domingo = 7
+    if (currentDay === 0) currentDay = 7;
+    
+    // Aplicar offset para debugging
+    targetDay = currentDay + dayOffset;
+    while (targetDay < 1) targetDay += 7;
+    while (targetDay > 7) targetDay -= 7;
+  }
 
   const entry = mockDatabase.find(e => e.puzzle.dayOfWeek === targetDay);
   
