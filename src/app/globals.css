@@ -7,7 +7,7 @@
   --accent: #C27644;
   --card: #F0EAE1;
   --card-border: #E0D4C3;
-  --card-inner: #FFFFFF; /* Lighter background for high contrast text blocks */
+  --card-inner: transparent; /* Mismo color que la tarjeta */
 }
 
 .dark {
@@ -17,7 +17,7 @@
   --accent: #D4AF37;
   --card: #1F1915;
   --card-border: #3A2F27;
-  --card-inner: #110D0B; /* Darker background for inset blocks */
+  --card-inner: transparent; /* Mismo color que la tarjeta */
 }
 
 @theme inline {
