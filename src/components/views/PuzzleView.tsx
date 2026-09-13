@@ -7,7 +7,7 @@ interface PuzzleViewProps {
 
 export default function PuzzleView({ puzzle }: PuzzleViewProps) {
   return (
-    <div className="w-full min-h-[65vh] antique-panel p-6 md:p-10 flex flex-col items-center justify-center text-center">
+    <div className="w-full min-h-[60vh] antique-panel p-2 md:p-10 flex flex-col items-center justify-center text-center">
       <div className="mb-4 text-accent font-semibold tracking-widest uppercase text-xs md:text-sm">
         Día {puzzle.dayOfWeek} • {puzzle.title}
       </div>
