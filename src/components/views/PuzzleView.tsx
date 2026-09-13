@@ -44,7 +44,7 @@ export default function PuzzleView({ puzzle }: PuzzleViewProps) {
 
         {puzzle.type === 'thursday_logic' && (
           <div className="flex flex-col items-center">
-            <div className="flex gap-2 md:gap-3 mb-4">
+            <div className="flex flex-wrap justify-center gap-2 md:gap-3 mb-4">
               {Array.from({ length: puzzle.slots }).map((_, i) => (
                 <div key={i} className="w-10 h-14 md:w-14 md:h-16 border-2 border-dashed border-card-border rounded-sm flex items-center justify-center text-card-border font-bold font-serif">
                   {i + 1}
@@ -70,7 +70,7 @@ export default function PuzzleView({ puzzle }: PuzzleViewProps) {
         )}
 
         {puzzle.type === 'saturday_association' && (
-          <div className="grid grid-cols-2 gap-3 max-w-sm mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 max-w-sm mx-auto">
             {puzzle.words.map((word, idx) => (
               <div key={idx} className="p-3 bg-[var(--card-inner)] rounded-sm border border-card-border shadow-inner flex items-center justify-center font-serif text-foreground text-sm md:text-base">
                 {word}
