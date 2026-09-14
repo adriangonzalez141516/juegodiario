@@ -82,11 +82,11 @@ const mockDatabase: PuzzleDBEntry[] = [
       dayOfWeek: 1,
       type: 'monday_object',
       title: 'El Objeto Incomprendido',
-      description: 'Un explorador del futuro describe un artefacto del siglo XXI.',
-      alienDescription: 'Un monolito de cristal negro que, al tocar su superficie helada, cobra vida mostrando ventanas a otros mundos, pero se alimenta diariamente de un cordón que nace de la pared.',
-      hints: ['Todos tenemos uno.', 'Sirve para comunicarse.']
+      description: 'Un explorador del futuro describe un artefacto cotidiano del pasado.',
+      alienDescription: 'Un pequeño disco con dos agujas prisioneras condenadas a perseguirse en círculos eternos. Los humanos lo llevan encadenado a la muñeca y lo consultan con rostro angustiado, rindiendo culto a un flujo invisible que no pueden detener.',
+      hints: ['Mide algo que no se puede tocar ni recuperar.', 'Lleva agujas o números y marca el ritmo del día.']
     },
-    solution: 'telefono' // normalizamos a minúsculas sin tildes para comparar
+    solution: 'reloj' // normalizamos a minúsculas sin tildes para comparar
   },
   {
     puzzle: {
@@ -164,12 +164,12 @@ const mockDatabase: PuzzleDBEntry[] = [
       dayOfWeek: 7,
       type: 'sunday_metapuzzle',
       title: 'El Rompecabezas Narrativo',
-      description: 'Combina las soluciones de esta semana. La clave para salir es el dispositivo con el que empezó todo, usado por la mentirosa para avisar sobre el clima.',
+      description: 'Combina las soluciones de esta semana. La clave para salir es el objeto del tiempo con el que empezó todo, usado por la mentirosa para avisar sobre el clima.',
       narrative: 'La puerta solo se abrirá si introduces la contraseña final que relaciona: [Lunes], [Martes] y [Viernes].',
       requiredSolutions: 6,
       hints: ['Busca la solución del Lunes.', 'Combina las palabras clave.']
     },
-    solution: 'telefono ana nube'
+    solution: 'reloj ana nube'
   }
 ];
 
