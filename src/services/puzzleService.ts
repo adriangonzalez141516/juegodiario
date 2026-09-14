@@ -82,11 +82,11 @@ const mockDatabase: PuzzleDBEntry[] = [
       dayOfWeek: 1,
       type: 'monday_object',
       title: 'El Objeto Incomprendido',
-      description: 'Un explorador del futuro describe un artefacto cotidiano del pasado.',
-      alienDescription: 'Cientos de láminas secas de madera prensada aprisionadas entre dos cubiertas rígidas. Sobre su superficie reposan miles de diminutos rastros negros congelados. Los humanos pasan horas en total inmovilidad contemplando estos signos mudos para inducirse alucinaciones lúcidas y escuchar los pensamientos de personas que murieron hace siglos.',
-      hints: ['Tiene hojas pero no es una planta; tiene lomo pero no es un animal.', 'Se abre para proyectar mundos enteros en la mente de quien lo contempla.']
+      description: 'Un explorador del futuro describe un mecanismo cotidiano del pasado.',
+      alienDescription: 'Dos hileras paralelas de colmillos metálicos idénticos e intercalados que se devoran mutuamente en una danza simétrica cuando una pequeña cuña deslizante los recorre. Los habitantes emplean este artefacto para abrir y clausurar brechas en las segundas pieles artificiales con las que cubren su cuerpo.',
+      hints: ['Une dos orillas flexibles sin necesidad de botones ni costuras continuas.', 'Se desliza mediante un tirador para sellar abrigos, pantalones o bolsas.']
     },
-    solution: 'libro' // normalizamos a minúsculas sin tildes para comparar
+    solution: 'cremallera' // normalizamos a minúsculas sin tildes para comparar
   },
   {
     puzzle: {
@@ -164,12 +164,12 @@ const mockDatabase: PuzzleDBEntry[] = [
       dayOfWeek: 7,
       type: 'sunday_metapuzzle',
       title: 'El Rompecabezas Narrativo',
-      description: 'Combina las soluciones de esta semana. La clave para salir es el contenedor de historias con el que empezó todo, usado por la mentirosa para avisar sobre el clima.',
+      description: 'Combina las soluciones de esta semana. La clave para salir es el mecanismo de cierre con el que empezó todo, usado por la mentirosa para avisar sobre el clima.',
       narrative: 'La puerta solo se abrirá si introduces la contraseña final que relaciona: [Lunes], [Martes] y [Viernes].',
       requiredSolutions: 6,
       hints: ['Busca la solución del Lunes.', 'Combina las palabras clave.']
     },
-    solution: 'libro ana nube'
+    solution: 'cremallera ana nube'
   }
 ];
 
