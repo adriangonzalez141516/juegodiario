@@ -83,10 +83,10 @@ const mockDatabase: PuzzleDBEntry[] = [
       type: 'monday_object',
       title: 'El Objeto Incomprendido',
       description: 'Un explorador del futuro describe un artefacto cotidiano del pasado.',
-      alienDescription: 'Un pequeño disco con dos agujas prisioneras condenadas a perseguirse en círculos eternos. Los humanos lo llevan encadenado a la muñeca y lo consultan con rostro angustiado, rindiendo culto a un flujo invisible que no pueden detener.',
-      hints: ['Mide algo que no se puede tocar ni recuperar.', 'Lleva agujas o números y marca el ritmo del día.']
+      alienDescription: 'Cientos de láminas secas de madera prensada aprisionadas entre dos cubiertas rígidas. Sobre su superficie reposan miles de diminutos rastros negros congelados. Los humanos pasan horas en total inmovilidad contemplando estos signos mudos para inducirse alucinaciones lúcidas y escuchar los pensamientos de personas que murieron hace siglos.',
+      hints: ['Tiene hojas pero no es una planta; tiene lomo pero no es un animal.', 'Se abre para proyectar mundos enteros en la mente de quien lo contempla.']
     },
-    solution: 'reloj' // normalizamos a minúsculas sin tildes para comparar
+    solution: 'libro' // normalizamos a minúsculas sin tildes para comparar
   },
   {
     puzzle: {
@@ -164,12 +164,12 @@ const mockDatabase: PuzzleDBEntry[] = [
       dayOfWeek: 7,
       type: 'sunday_metapuzzle',
       title: 'El Rompecabezas Narrativo',
-      description: 'Combina las soluciones de esta semana. La clave para salir es el objeto del tiempo con el que empezó todo, usado por la mentirosa para avisar sobre el clima.',
+      description: 'Combina las soluciones de esta semana. La clave para salir es el contenedor de historias con el que empezó todo, usado por la mentirosa para avisar sobre el clima.',
       narrative: 'La puerta solo se abrirá si introduces la contraseña final que relaciona: [Lunes], [Martes] y [Viernes].',
       requiredSolutions: 6,
       hints: ['Busca la solución del Lunes.', 'Combina las palabras clave.']
     },
-    solution: 'reloj ana nube'
+    solution: 'libro ana nube'
   }
 ];
 
