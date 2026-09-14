@@ -14,8 +14,8 @@ export default function BottomBar() {
   ];
 
   return (
-    <nav className="w-full bg-[var(--card)] border-t border-[var(--card-border)] z-50 shrink-0">
-      <div className="max-w-md mx-auto px-6 h-16 flex items-center justify-between">
+    <nav className="w-full bg-[var(--card)] border-t border-[var(--card-border)] shrink-0 z-30">
+      <div className="max-w-md mx-auto px-6 h-14 sm:h-16 flex items-center justify-between">
         {navItems.map((item) => {
           const Icon = item.icon;
           const isActive = pathname === item.href;
@@ -24,11 +24,11 @@ export default function BottomBar() {
             <Link 
               key={item.href} 
               href={item.href}
-              className={`flex flex-col items-center justify-center w-full h-full space-y-1 transition-colors ${
+              className={`flex flex-col items-center justify-center w-full h-full space-y-0.5 transition-colors ${
                 isActive ? 'text-[var(--accent)]' : 'text-[var(--foreground)] opacity-60 hover:opacity-100'
               }`}
             >
-              <Icon size={20} className={isActive ? 'drop-shadow-[0_0_5px_rgba(212,175,55,0.5)]' : ''} />
+              <Icon size={19} className={isActive ? 'drop-shadow-[0_0_5px_rgba(212,175,55,0.5)]' : ''} />
               <span className="text-[10px] font-medium tracking-wide uppercase">{item.label}</span>
             </Link>
           );

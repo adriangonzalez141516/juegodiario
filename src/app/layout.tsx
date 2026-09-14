@@ -29,18 +29,23 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es" className={`${inter.variable} ${playfair.variable}`} suppressHydrationWarning>
-      <body className="antialiased h-[100dvh] flex flex-col overflow-hidden transition-colors duration-300">
+      <body className="antialiased h-dvh max-h-dvh flex flex-col overflow-hidden bg-[var(--background)] text-[var(--foreground)] transition-colors duration-300">
         <ThemeProvider>
-          <header className="w-full max-w-4xl mx-auto px-4 py-3 sm:py-4 flex justify-between items-center shrink-0">
+          {/* 1. Cabecera fija arriba */}
+          <header className="w-full max-w-4xl mx-auto px-4 py-2 sm:py-3 flex justify-between items-center shrink-0 border-b border-[var(--card-border)]/40">
             <div className="w-9" /> {/* Spacer para centrar el título */}
-            <h1 className="text-2xl sm:text-3xl font-serif font-bold tracking-widest text-[var(--accent)] drop-shadow-md">
+            <h1 className="text-xl sm:text-2xl font-serif font-bold tracking-widest text-[var(--accent)] drop-shadow-sm">
               EL ENIGMA
             </h1>
             <ThemeToggle />
           </header>
-          <main className="flex-1 w-full max-w-3xl mx-auto flex flex-col min-h-0">
+
+          {/* 2. Área central: exactamente el alto restante entre header y bottom bar */}
+          <main className="flex-1 w-full max-w-3xl mx-auto flex flex-col min-h-0 overflow-hidden">
             {children}
           </main>
+
+          {/* 3. Barra de navegación fija abajo */}
           <BottomBar />
         </ThemeProvider>
       </body>

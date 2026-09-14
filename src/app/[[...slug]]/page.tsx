@@ -71,24 +71,24 @@ export default async function OrchestratorPage({ params }: Props) {
   };
 
   return (
-    <div className="flex flex-col w-full h-full">
+    <div className="flex-1 w-full flex flex-col min-h-0 overflow-hidden">
       {/* Schema JSON-LD para SEO */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       
-      {/* Contenedor enigma el restante */}
-      <div className="flex-1 w-full overflow-y-auto min-h-0 px-4">
-        <div className="w-full min-h-full flex flex-col justify-center py-4">
-          <Suspense fallback={<div className="animate-pulse h-full w-full bg-[var(--card)] opacity-50 rounded-sm"></div>}>
+      {/* 1. Contenedor enigma: ocupa TODO el alto restante con scroll vertical aislado */}
+      <div className="flex-1 w-full min-h-0 overflow-y-auto px-3 sm:px-6 py-2 sm:py-4 flex flex-col">
+        <div className="my-auto w-full flex flex-col items-center">
+          <Suspense fallback={<div className="animate-pulse h-48 w-full bg-[var(--card)] opacity-50 rounded-sm" />}>
             <PuzzleView puzzle={puzzle} />
           </Suspense>
         </div>
       </div>
 
-      {/* Escribir respuesta */}
-      <div className="w-full shrink-0 p-4 bg-[var(--background)] border-t border-[var(--card-border)] flex justify-center z-10">
+      {/* 2. Campo de respuesta: fijo justo encima del BottomBar */}
+      <div className="shrink-0 w-full px-4 py-2.5 sm:py-3 bg-[var(--background)] border-t border-[var(--card-border)] z-20 flex justify-center shadow-sm">
         <div className="w-full max-w-md">
           <InteractiveInput hashedSolution={hashedSolution} onSuccess={saveProgress} />
         </div>
