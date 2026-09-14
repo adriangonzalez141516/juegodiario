@@ -71,23 +71,24 @@ export default async function OrchestratorPage({ params }: Props) {
   };
 
   return (
-    <div className="w-full h-full min-h-full flex flex-col items-center px-4">
+    <div className="flex flex-col w-full h-full">
       {/* Schema JSON-LD para SEO */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       
-      <div className="w-full flex-1 flex flex-col justify-center min-h-0 pt-4">
-        <Suspense fallback={<div className="animate-pulse h-full w-full bg-[var(--card)] opacity-50 rounded-sm"></div>}>
-          <PuzzleView puzzle={puzzle} />
-        </Suspense>
+      {/* Contenedor enigma el restante */}
+      <div className="flex-1 w-full overflow-y-auto min-h-0 px-4">
+        <div className="w-full min-h-full flex flex-col justify-center py-4">
+          <Suspense fallback={<div className="animate-pulse h-full w-full bg-[var(--card)] opacity-50 rounded-sm"></div>}>
+            <PuzzleView puzzle={puzzle} />
+          </Suspense>
+        </div>
       </div>
 
-      {/* Spacer inquebrantable para evitar colisión con el input fijo y bottom bar */}
-      <div className="w-full shrink-0 h-40"></div>
-
-      <div className="fixed bottom-16 left-0 w-full p-4 bg-[var(--background)] border-t border-[var(--card-border)] z-40 flex justify-center">
+      {/* Escribir respuesta */}
+      <div className="w-full shrink-0 p-4 bg-[var(--background)] border-t border-[var(--card-border)] flex justify-center z-10">
         <div className="w-full max-w-md">
           <InteractiveInput hashedSolution={hashedSolution} onSuccess={saveProgress} />
         </div>

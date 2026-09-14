@@ -14,7 +14,7 @@ export default function BottomBar() {
   ];
 
   return (
-    <nav className="fixed bottom-0 w-full bg-[var(--card)] border-t border-[var(--card-border)] shadow-[0_-5px_15px_rgba(0,0,0,0.1)] dark:shadow-[0_-5px_15px_rgba(0,0,0,0.5)] z-50">
+    <nav className="w-full bg-[var(--card)] border-t border-[var(--card-border)] z-50 shrink-0">
       <div className="max-w-md mx-auto px-6 h-16 flex items-center justify-between">
         {navItems.map((item) => {
           const Icon = item.icon;
