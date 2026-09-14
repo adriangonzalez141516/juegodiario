@@ -39,10 +39,10 @@ export default function TuesdayCarousel({ testimonies }: Props) {
         {testimonies.map((t, idx) => (
           <div 
             key={idx} 
-            className="w-full min-w-full md:min-w-0 flex-shrink-0 md:flex-shrink snap-center p-3 bg-[var(--card-inner)] rounded-sm border border-card-border text-left shadow-inner"
+            className="w-full min-w-full md:min-w-0 flex-shrink-0 md:flex-shrink snap-center p-3.5 sm:p-4 bg-[var(--card-inner)] rounded-sm border border-card-border text-left shadow-inner"
           >
-            <h3 className="font-bold font-serif text-accent mb-1 text-sm">{t.character}</h3>
-            <p className="text-foreground/90 text-sm leading-snug">"{t.statement}"</p>
+            <h3 className="font-bold font-serif text-accent mb-1.5 text-sm sm:text-base">{t.character}</h3>
+            <p className="text-foreground/90 text-sm sm:text-base leading-relaxed font-serif">"{t.statement}"</p>
           </div>
         ))}
       </div>
