@@ -29,19 +29,21 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es" className={`${inter.variable} ${playfair.variable}`} suppressHydrationWarning>
-      <body className="antialiased h-dvh max-h-dvh flex flex-col overflow-hidden bg-[var(--background)] text-[var(--foreground)] transition-colors duration-300">
+      <body className="antialiased bg-[var(--background)] text-[var(--foreground)] overflow-hidden transition-colors duration-300">
         <ThemeProvider>
           {/* 1. Cabecera fija arriba */}
-          <header className="w-full max-w-4xl mx-auto px-4 py-2 sm:py-3 flex justify-between items-center shrink-0 border-b border-[var(--card-border)]/40">
-            <div className="w-9" /> {/* Spacer para centrar el título */}
-            <h1 className="text-xl sm:text-2xl font-serif font-bold tracking-widest text-[var(--accent)] drop-shadow-sm">
-              EL ENIGMA
-            </h1>
-            <ThemeToggle />
+          <header className="fixed top-0 left-0 w-full h-14 sm:h-16 z-40 bg-[var(--background)]/95 backdrop-blur-sm border-b border-[var(--card-border)]/40 flex items-center">
+            <div className="w-full max-w-4xl mx-auto px-4 flex justify-between items-center">
+              <div className="w-9" /> {/* Spacer para centrar el título */}
+              <h1 className="text-xl sm:text-2xl font-serif font-bold tracking-widest text-[var(--accent)] drop-shadow-sm">
+                EL ENIGMA
+              </h1>
+              <ThemeToggle />
+            </div>
           </header>
 
-          {/* 2. Área central: exactamente el alto restante entre header y bottom bar */}
-          <main className="flex-1 w-full max-w-3xl mx-auto flex flex-col min-h-0 overflow-hidden">
+          {/* 2. Área central */}
+          <main className="w-full">
             {children}
           </main>
 

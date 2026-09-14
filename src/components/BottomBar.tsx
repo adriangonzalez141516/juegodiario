@@ -14,8 +14,8 @@ export default function BottomBar() {
   ];
 
   return (
-    <nav className="w-full bg-[var(--card)] border-t border-[var(--card-border)] shrink-0 z-30">
-      <div className="max-w-md mx-auto px-6 h-14 sm:h-16 flex items-center justify-between">
+    <nav className="fixed bottom-0 left-0 w-full h-14 sm:h-16 bg-[var(--card)] border-t border-[var(--card-border)] z-40 flex items-center justify-center shadow-[0_-4px_12px_rgba(0,0,0,0.08)]">
+      <div className="w-full max-w-md mx-auto px-6 h-full flex items-center justify-between">
         {navItems.map((item) => {
           const Icon = item.icon;
           const isActive = pathname === item.href;
